@@ -1,27 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  [React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am a H1 tag!"),
-    React.createElement("h2", {}, "I am a H2 tag!"),
-  ]), 
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I am a H1 tag!"),
-    React.createElement("h2", {}, "I am a H2 tag!"),
-  ])]
-);
+// React Element
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Hello World from React!!"
-);
+const heading = React.createElement("h1", { id: "heading" }, "This is 🦁BNS.");
 
-console.log(parent);
+//JSX => HTML-like or XML-like SYNTAX. jsx is different, react is different.
+// React Element
+const jsxHeading = <h1 id="headingJSX"> This is 🍵BNS. </h1>;
+
+// React Functional Components
+
+const Title = () => <h1 className="title">Learning React.</h1>;
+
+// Component Composition
+const HeadingComponent = () => (
+    <>
+    <div className="container">
+        {Title() }
+    <Title />
+    {console.log('bns')}
+    <h2>This is 0️⃣BNS.</h2>
+  </div>
+  </>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);   
+root.render(<HeadingComponent />);
