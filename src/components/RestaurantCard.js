@@ -4,7 +4,7 @@ const RestaurantCard = (props) => {
   //Destructuring on the Fly
 
   const { resData } = props;
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } = resData?.data;
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId , deliveryTime } = resData?.data;
 // const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } = resData;
 
   return (
@@ -17,7 +17,8 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>Rs.{costForTwo / 100} FOR TWO.</h4>
       <h5>{cuisines.join(", ")}</h5>
-      <h6>{avgRating} ⭐</h6>
+      <h5>{avgRating} ⭐</h5>
+      <h5>{deliveryTime} Minutes</h5>
     </div>
   );
 };
